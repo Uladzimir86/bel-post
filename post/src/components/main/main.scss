@@ -1,9 +1,55 @@
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
   min-height: 1129px;
-  padding: 6rem 2rem 6rem 5.5rem;
+  padding: 2.5rem 2rem 6rem 5.5rem;
   background: linear-gradient(115.6deg, #3EB5F1 3.7%, #4E6FB3 59.81%, #3EB5F1 103.65%);
+  &__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  &__title {
+    position: relative;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2C2C33;
+  }
+  &_section {
+    background: url('../../assets/images/back.png');
+  }
+  &__btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &_back {
+      width: 6rem;
+      height: 4rem;
+      right: 0px;
+    }
+    &_home {
+      width: 4rem;
+      height: 4rem;
+      left: 0;
+    }
+    &:hover {
+      filter: drop-shadow( 2px 6px 10px rgba(31, 29, 113, 0.3)); 
+    }
+  }
+  &__text {
+    margin-top: 3rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.02em;
+    color: #2C2C33;
+  }
 }

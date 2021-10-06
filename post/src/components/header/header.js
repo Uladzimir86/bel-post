@@ -34,7 +34,7 @@ const Header = () => {
         })
         .then((data) => setWeather({...data}))
     };
-    //navigator.geolocation.getCurrentPosition(getPosition);
+    navigator.geolocation.getCurrentPosition(getPosition);
   },[])
 
   useEffect(() => {
