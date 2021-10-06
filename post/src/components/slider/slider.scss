@@ -1,0 +1,28 @@
+.slider {
+  position: relative;
+  min-height: 608px;
+
+  &__btn {
+    position: absolute;
+    bottom: -35px;
+    width: 71px;
+    height: 71px; 
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: rgba(0,0,0,0.14) !important;
+    cursor: pointer;
+    color: transparent !important;
+ 
+    &_left {
+      background-image: url(../../assets/icons/Vector-left.png) !important;
+      left: 20px;
+    }
+    &_right {
+      background-image: url(../../assets/icons/Vector-right.png) !important;
+      right: 20px;
+    }
+  }
+}

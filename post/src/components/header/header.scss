@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 73px;
+  padding: 7px 6rem;
+  background-color: #009DE9;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 4.1rem;
+  letter-spacing: 0.3rem;
+  color: #ffffff;
+
+  &__weather {
+    position: relative;
+    margin-left: 5rem;
+  }
+  &__image{
+    position: absolute;
+    top: -20px;
+  }
+}
