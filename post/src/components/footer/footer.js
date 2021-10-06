@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer__text">
           Национальный оператор почтовой связи Республики Беларусь 
         </div>
-        <img src={LogoPost}  alt="logo of bel post" className="footer__logo"></img>
+        <img src={LogoPost}  alt="logo of bel post" className="footer__logo" />
         <div className="footer__text">
           <a href="https://shop.belpost.by/" className="footer__link">
             Покупайте белорусские товары на shop.belpost.by
@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer__text">
           Разработано компанией
         </div>
-        <img src={LogoTehno}  alt="logo of tehno sky" className="footer__logo"></img>
+        <img src={LogoTehno}  alt="logo of tehno sky" className="footer__logo" />
         <div className="footer__text">
           <a href="https://high-tech.by/" className="footer__link">
             High-tech.by
