@@ -1,12 +1,13 @@
 .main {
   min-height: 1129px;
-  padding: 2.5rem 2rem 6rem 5.5rem;
+  padding: 2.5rem 2rem 6rem;
   background: linear-gradient(115.6deg, #3EB5F1 3.7%, #4E6FB3 59.81%, #3EB5F1 103.65%);
   &__cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+    padding-left: 3.5rem;
   }
   &__title {
     position: relative;
@@ -28,22 +29,20 @@
     border: none;
     outline: none;
     cursor: pointer;
+    top: -10px;
     &_back {
-      width: 6rem;
-      height: 4rem;
       right: 0px;
     }
     &_home {
-      width: 4rem;
-      height: 4rem;
-      left: 0;
+      left: -15px;
     }
     &:hover {
       filter: drop-shadow( 2px 6px 10px rgba(31, 29, 113, 0.3)); 
     }
   }
   &__text {
-    margin-top: 3rem;
+    width: 82%;
+    margin: 3rem auto;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

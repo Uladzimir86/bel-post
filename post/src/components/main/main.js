@@ -31,7 +31,7 @@ useEffect(() => {
         <div className="main__title">
           {title}
 
-          <button 
+          {text && <button 
             type="button" 
             className="main__btn main__btn_home" 
             onClick={
@@ -39,7 +39,7 @@ useEffect(() => {
             }
           >
             <img src={Home} alt="icon home" className="main__btn_home"/>
-          </button>
+          </button>}
 
           <button 
             type="button" 
