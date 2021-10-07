@@ -7,7 +7,7 @@ import Back from '../../assets/icons/down.png';
 import Home from '../../assets/icons/Home.png';
 
 const Main = ({arrCards = [], title = '', text = ''}) => {
-
+console.log(arrCards, title , text)
 const cards = arrCards.map(item => {
     return (
       <Card title={item.title} icon={item.icon} id={item.id} key={item.id} />

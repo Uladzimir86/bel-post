@@ -43,7 +43,7 @@ function App() {
                 return <Main text={card?.text} title={card?.title}/>
                 }
               case 'guide': {
-                const card = adminProc.find((item) => item.id === match.params.id)
+                const card = guides.find((item) => item.id === match.params.id)
                 return <Main text={card?.text} title={card?.title}/>
                 }
               case 'schedule': {
