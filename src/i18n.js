@@ -30,7 +30,7 @@ i18n
       }
     },
     lng: "ru", 
-    fallbackLng: "en",
+    fallbackLng: "ru",
 
     interpolation: {
       escapeValue: false 

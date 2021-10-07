@@ -5,23 +5,24 @@ import { useEffect, useState  } from "react";
 import Back from '../../assets/icons/down.png';
 import Home from '../../assets/icons/Home.png';
 
-const Main = ({arrCards = [], title = '', text = ''}) => {
-const cards = arrCards.map(item => {
+const Main = ({arrCards = [], title = '', text = '', trans = true}) => {
+
+  const cards = arrCards.map(item => {
     return (
-      <Card title={item.title} icon={item.icon} id={item.id} key={item.id} />
+      <Card title={item.title} icon={item.icon} id={item.id} trans={trans} key={item.id} />
     )
   })
 
-let location = useLocation();
-let history = useHistory();
-const [mainClass, setMainClass] = useState('main');
-
-useEffect(() => {
-  if(location.pathname === '/') setMainClass('main')
-    else setMainClass('main main_section')
-}, [location])
-
-
+  let location = useLocation();
+  let history = useHistory();
+  const [mainClass, setMainClass] = useState('main');
+  
+  useEffect(() => {
+    if(location.pathname === '/') setMainClass('main')
+      else setMainClass('main main_section')
+  }, [location])
+  
+  
   return (
     <main className={mainClass}>
       {title && 

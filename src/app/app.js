@@ -1,5 +1,6 @@
 import './app.scss';
 import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -18,6 +19,7 @@ import {schedules} from '../assets/cards/schedules';
 
 function App() {
 
+  const { t } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language)
 
   const handlerLanguage = () => {
@@ -33,16 +35,16 @@ function App() {
       <Router>
         <Switch>
           <Route path="/admin" exact>
-            <Main arrCards={adminProc} title="Административные процедуры"/>
+            <Main arrCards={adminProc} title={t('admin')} trans={false}/>
           </Route>
           <Route path="/guide" exact>
-            <Main arrCards={guides} title="Руководство"/>
+            <Main arrCards={guides} title={t('guide')} trans={false}/>
           </Route>
           <Route path="/schedule" exact>
-            <Main arrCards={schedules} title="график приЁма"/>
+            <Main arrCards={schedules} title={t('schedule')} trans={false}/>
           </Route>
           <Route path="/structure" exact>
-            <Main arrCards={structure} title="Структура"/>
+            <Main arrCards={structure} title={t('structure')} trans={false}/>
           </Route>
 
           <Route path="/:param/:id"  render = {({ match }) => {

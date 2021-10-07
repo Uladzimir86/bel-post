@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const Card = ({title, icon, id}) => {
+const Card = ({title, icon, id, trans}) => {
   
   const { t } = useTranslation();
 
@@ -11,7 +11,8 @@ const Card = ({title, icon, id}) => {
   let path = location.pathname !== '/' ? location.pathname : '';
   return (
     <div className="card">
-      <span className="card__title">{t(id)}</span>
+      {trans && <span className="card__title">{t(id)}</span>}
+      {!trans && <span className="card__title">{title}</span>}
       <Link to={`${path}/${id}`} className="card__link">
         <img src={icon} alt="icon"  className="card__icon"/>
       </Link>
