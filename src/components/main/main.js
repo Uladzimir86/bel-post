@@ -1,7 +1,6 @@
-import { useLocation, Link, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import './main.scss';
 import Card from '../../UI-components/card/card';
-import {sections} from '../../assets/cards/sections';
 import { useEffect, useState  } from "react";
 import Back from '../../assets/icons/down.png';
 import Home from '../../assets/icons/Home.png';
