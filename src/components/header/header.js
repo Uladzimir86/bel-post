@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react';
 import './header.scss';
 
-const Header = () => {
+const Header = ({currentLanguage}) => {
   
   const [weather, setWeather] = useState({});
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
 
-  useEffect(() => {
-    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  const getDate = (lang) => {
+    const monthsRu = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    const monthsEn = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = months[currentDate.getMonth()];
+    const month = (lang === 'ru') ? monthsRu[currentDate.getMonth()] : monthsEn[currentDate.getMonth()];
     const day = currentDate.getDate() < 10 ? 0 + String(currentDate.getDate()) : currentDate.getDate();
 
     setDate(day + ' ' + month + ' ' + year);
+  }
+  useEffect(() => {
+    getDate(currentLanguage);
+  }, [currentLanguage])
+  useEffect(() => {
 
     function getPosition(position) {
       const coords = position.coords;
@@ -34,7 +40,7 @@ const Header = () => {
         })
         .then((data) => setWeather({...data}))
     };
-    // navigator.geolocation.getCurrentPosition(getPosition);
+    navigator.geolocation.getCurrentPosition(getPosition);
   },[])
 
   useEffect(() => {

@@ -1,1 +1,0 @@
-export const  MAIN_ICONS_COLOR = '#000000'

@@ -7,7 +7,6 @@ import Back from '../../assets/icons/down.png';
 import Home from '../../assets/icons/Home.png';
 
 const Main = ({arrCards = [], title = '', text = ''}) => {
-console.log(arrCards, title , text)
 const cards = arrCards.map(item => {
     return (
       <Card title={item.title} icon={item.icon} id={item.id} key={item.id} />
@@ -19,7 +18,6 @@ let history = useHistory();
 const [mainClass, setMainClass] = useState('main');
 
 useEffect(() => {
-  console.log(location)
   if(location.pathname === '/') setMainClass('main')
     else setMainClass('main main_section')
 }, [location])

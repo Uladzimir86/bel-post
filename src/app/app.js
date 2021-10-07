@@ -1,4 +1,6 @@
 import './app.scss';
+import i18n from 'i18next';
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,9 +17,17 @@ import {structure} from '../assets/cards/structure';
 import {schedules} from '../assets/cards/schedules';
 
 function App() {
+
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language)
+
+  const handlerLanguage = () => {
+    i18n.language==='ru' ? i18n.changeLanguage('en') : i18n.changeLanguage('ru');
+    setCurrentLanguage(i18n.language);
+  }
+
   return (
     <div className="app">
-      <Header />
+      <Header currentLanguage={currentLanguage}/>
       <Slider />
 
       <Router>
@@ -36,7 +46,6 @@ function App() {
           </Route>
 
           <Route path="/:param/:id"  render = {({ match }) => {
-            console.log(match)
             switch (match.params.param) {
               case 'admin': {
                 const card = adminProc.find((item) => item.id === match.params.id)
@@ -64,7 +73,7 @@ function App() {
         </Switch>
       </Router>
       
-      <Footer /> 
+      <Footer handlerLanguage={handlerLanguage}/> 
     </div>
   );
 }
